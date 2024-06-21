@@ -1,0 +1,181 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "poppins" sans-serif;
+}
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: white;
+}
+a {
+  text-decoration: none;
+}
+.NavBar {
+  padding: 0 10%;
+  /* margin-bottom: 15px; */
+}
+.logo {
+  font-size: 40px;
+}
+.logoLeft {
+  color: #050c9c;
+}
+.logoRight {
+  color: #f4651e;
+}
+.navUpperPart {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 0;
+}
+/* .NavLowerPart {
+  border: 2px solid;
+  padding: 10px 0;
+} */
+.linksContainer {
+  display: flex;
+  list-style-type: none;
+  justify-content: space-around;
+  padding: 0 30px;
+}
+.linksContainer {
+  display: flex;
+  justify-content: space-around;
+}
+.linksContainer li {
+  margin-right: 30px;
+}
+.linksContainer li:hover {
+  transform: scale(1.05);
+  transition: all 0.2s linear;
+}
+.linksContainer a:hover {
+  color: #f4651e;
+  transition: all 0.2s linear;
+}
+.navLinkIcon {
+  margin: 0 8px;
+  font-size: 22px;
+}
+.linksContainer a {
+  text-decoration: none;
+  color: black;
+  font-size: 20px;
+  font-weight: 600;
+}
+.logOut button {
+  display: flex;
+  /* width: 100px; */
+  padding: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 20px;
+  cursor: pointer;
+  background: rgb(34, 193, 195);
+  background: linear-gradient(
+    0deg,
+    rgba(34, 193, 195, 1) 0%,
+    rgba(253, 187, 45, 1) 100%
+  );
+}
+.logOutText {
+  display: none;
+  margin-left: 10px;
+}
+.logOut button:hover {
+  padding: 10px;
+  background-color: brown;
+  color: rgb(0, 0, 0);
+  border-radius: 20px;
+  transition: all 0.5s linear;
+  .logOutText {
+    display: block;
+  }
+}
+.bars {
+  display: none;
+}
+.bars button {
+  /* width: 50px; */
+  background-color: transparent;
+  border: none;
+  outline: none;
+  height: 20px;
+}
+.bars button i {
+  font-size: 28px;
+}
+@media screen and (max-width: 576px) {
+  .NavBar {
+    padding: 0 4%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .NavBar {
+    padding: 0 6%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .NavBar {
+    padding: 0 4%;
+  }
+  .bars {
+    display: block;
+  }
+  .linksContainer,
+  .logOut {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .NavBar {
+    padding: 0 4%;
+  }
+  .logo {
+    font-size: 25px;
+  }
+  .linksContainer li {
+    margin-right: 15px;
+  }
+  .linksContainer a {
+    font-size: 17px;
+    font-weight: 600;
+  }
+}
+@media screen and (max-width: 1050px) {
+  .NavBar {
+    padding: 0 6%;
+  }
+  .logo {
+    font-size: 30px;
+  }
+  .linksContainer li {
+    margin-right: 15px;
+  }
+  .linksContainer a {
+    font-size: 17px;
+    font-weight: 600;
+  }
+}
+@media screen and (max-width: 1250px) {
+  .NavBar {
+    padding: 0 7%;
+  }
+  .logo {
+    font-size: 35px;
+  }
+  .linksContainer li {
+    margin-right: 20px;
+  }
+  .linksContainer a {
+    font-size: 18px;
+    font-weight: 600;
+  }
+}
