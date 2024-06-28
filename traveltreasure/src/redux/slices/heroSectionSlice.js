@@ -5,7 +5,7 @@ const heroSecSlice = createSlice({
   name: "heroSecSlice",
   initialState: {
     slide: 0,
-    autoSlide: false,
+    autoSlide: true,
   },
   reducers: {
     nextSlide: (state) => {

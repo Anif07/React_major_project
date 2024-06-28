@@ -19,11 +19,13 @@ function PackageBilling() {
   const Exploringpackage = useSelector(
     (state) => state.singlePackage.package[0]
   );
+  const { isAuth } = useSelector((state) => state.LogIn);
   const adultsPrice = Exploringpackage?.price * adults;
   const childrenPrice =
     childrens !== "0" ? Exploringpackage?.price * childrens - 5000 : "0";
   const totalPrice = adultsPrice + childrenPrice;
   const belong = location.state.belong;
+  const id = location.state.id;
 
   useEffect(() => {
     if (location.state && location.state.id) {
@@ -45,6 +47,8 @@ function PackageBilling() {
         destination: Exploringpackage?.destination,
         totalPrice: totalPrice,
         date: from,
+        belong: belong,
+        id: id,
       })
     ).then((result) => {
       if (result.type === "SinglePackageSlice/PostToMyTripsIndia/fulfilled") {
@@ -57,6 +61,17 @@ function PackageBilling() {
   const handleSubmit = (e) => {
     e.preventDefault();
     completeOrderHandler();
+    // if (isAuth) {
+    //   completeOrderHandler();
+    // } else {
+    //   const data = {
+    //     location: "/packageBilling",
+    //     id: location.state.id,
+    //     belong: location.state.belong,
+    //   };
+    //   localStorage.setItem("location", JSON.stringify(data));
+    //   navigate("/Login");
+    // }
   };
 
   if (status === "pending") {
@@ -92,11 +107,11 @@ function PackageBilling() {
                 <strong>Duration: </strong>
                 {Exploringpackage?.duration.days} days
               </p>
-              <h3>Tickets:</h3>
+              <h3 className="ticketHeading">Tickets:</h3>
               <p>
                 Adults x {adults}=
                 <strong>
-                  <i class="fa-solid fa-indian-rupee-sign"></i>
+                  <i ClassName="fa-solid fa-indian-rupee-sign"></i>
                   {adultsPrice}
                 </strong>
               </p>
@@ -104,7 +119,7 @@ function PackageBilling() {
                 <p>
                   Childrens x {childrens}=
                   <strong>
-                    <i class="fa-solid fa-indian-rupee-sign"></i>
+                    <i ClassName="fa-solid fa-indian-rupee-sign"></i>
                     {childrenPrice}
                   </strong>
                 </p>
@@ -117,27 +132,27 @@ function PackageBilling() {
               <tr>
                 <td className="left">Sub Total :</td>
                 <td className="right">
-                  <i class="fa-solid fa-indian-rupee-sign"></i>{" "}
+                  <i ClassName="fa-solid fa-indian-rupee-sign"></i>{" "}
                   {adultsPrice + childrenPrice}
                 </td>
               </tr>
               <tr>
                 <td className="left">Total:</td>
                 <td className="right">
-                  <i class="fa-solid fa-indian-rupee-sign"></i>{" "}
+                  <i ClassName="fa-solid fa-indian-rupee-sign"></i>{" "}
                   {adultsPrice + childrenPrice}
                 </td>
               </tr>
               <tr>
                 <td className="left">Amount Paid:</td>
                 <td className="right">
-                  <i class="fa-solid fa-indian-rupee-sign"></i> 0
+                  <i ClassName="fa-solid fa-indian-rupee-sign"></i> 0
                 </td>
               </tr>
               <tr>
                 <td className="left">Amount Due:</td>
                 <td className="billingLastAmount right">
-                  <i class="fa-solid fa-indian-rupee-sign"></i>{" "}
+                  <i ClassName="fa-solid fa-indian-rupee-sign"></i>{" "}
                   {adultsPrice + childrenPrice}
                 </td>
               </tr>

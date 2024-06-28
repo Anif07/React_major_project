@@ -53,3 +53,24 @@
     opacity: 0;
   }
 }
+
+@media screen and (max-width: 992px) {
+  .loading {
+    font-size: 70px;
+  }
+}
+@media screen and (max-width: 786px) {
+  .loading {
+    font-size: 60px;
+  }
+}
+@media screen and (max-width: 576px) {
+  .loading {
+    font-size: 50px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .loading {
+    font-size: 40px;
+  }
+}

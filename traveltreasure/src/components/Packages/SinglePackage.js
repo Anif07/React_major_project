@@ -25,6 +25,8 @@ function SinglePackage() {
   const { status, from, time, adults, childrens } = useSelector(
     (state) => state.singlePackage
   );
+  const { isAuth } = useSelector((state) => state.LogIn);
+
   const today = new Date().toISOString().split("T")[0];
   const adultsPrice = Exploringpackage?.price * adults;
   const childrensPrice =
@@ -52,9 +54,19 @@ function SinglePackage() {
   }
   const submitHandler = (e) => {
     e.preventDefault();
-    navigate("/packageBilling", {
-      state: { id: location.state.id, belong: location.state.belong },
-    });
+    if (isAuth) {
+      navigate("/packageBilling", {
+        state: { id: location.state.id, belong: location.state.belong },
+      });
+    } else {
+      const data = {
+        location: "/singlePackage",
+        id: location.state.id,
+        belong: location.state.belong,
+      };
+      localStorage.setItem("location", JSON.stringify(data));
+      navigate("/Login");
+    }
   };
 
   return (
@@ -66,7 +78,7 @@ function SinglePackage() {
             <div className="packDetails">
               <h1>{Exploringpackage?.name}</h1>
               <p>
-                <i class="fa-solid fa-location-dot"></i>
+                <i ClassName="fa-solid fa-location-dot"></i>
                 {Exploringpackage?.destination}
               </p>
             </div>
@@ -228,7 +240,7 @@ function SinglePackage() {
                   <div className="total">
                     <p>Total:</p>
                     <span>
-                      <i class="fa-solid fa-indian-rupee-sign"></i>
+                      <i ClassName="fa-solid fa-indian-rupee-sign"></i>
                       {adultsPrice + +childrensPrice}
                     </span>
                   </div>

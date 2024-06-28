@@ -237,5 +237,149 @@
   font-size: 1.3rem;
   font-weight: 600;
   color: white;
+  border-radius: 10px;
   cursor: pointer;
+}
+
+@media screen and (max-width: 1200px) {
+}
+@media screen and (max-width: 1024px) {
+}
+@media screen and (max-width: 992px) {
+  .singlePackDetails {
+    padding: 0 25px;
+  }
+  .singlePackImg {
+    height: 350px;
+  }
+  .packDetails h1 {
+    font-size: 3rem;
+  }
+  .description h2,
+  .inclusion-exclusions-cont h2,
+  .tourPlan h2 {
+    font-size: 1.7rem;
+  }
+
+  .description p {
+    font-size: 1rem;
+  }
+  .tourPlan li {
+    font-size: 1rem;
+  }
+  .descriptionRight h2 {
+    font-size: 1.5rem;
+  }
+}
+@media screen and (max-width: 768px) {
+  .singlePackImg {
+    height: 260px;
+  }
+  .packDetails h1 {
+    font-size: 2.5rem;
+  }
+  .packDetails p {
+    font-size: 1.2rem;
+  }
+  .packageDescription {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .bookNowBtn {
+    width: 160px;
+    height: 35px;
+    font-size: 1.1rem;
+  }
+  .durationContainer {
+    padding-left: 0;
+  }
+  .Box-in-container {
+    margin: 0 12px;
+  }
+  .Box-in-container h3 {
+    font-size: 1.1rem;
+  }
+  .Box-in-container i {
+    margin-right: 8px;
+    font-size: 1.2rem;
+  }
+  .from label,
+  .timeLabel {
+    font-size: 1rem;
+  }
+  .adult h3,
+  .children h3 {
+    margin-left: 6px;
+    font-size: 1rem;
+  }
+}
+@media screen and (max-width: 568px) {
+  .singlePackImg {
+    height: 230px;
+  }
+  .packDetails h1 {
+    font-size: 1.8rem;
+  }
+  .packDetails p {
+    font-size: 1rem;
+  }
+  .Box-in-container h3,
+  .durationContainer h3 {
+    font-size: 0.9rem;
+  }
+  .Box-in-container {
+    margin: 0 7px;
+  }
+  .durationContainer {
+    flex-wrap: wrap;
+    align-content: 5px;
+    gap: 20px;
+  }
+  .descriptionRight {
+    width: 290px;
+  }
+  .description h2,
+  .inclusion-exclusions-cont h2,
+  .tourPlan h2 {
+    font-size: 1.5rem;
+  }
+}
+@media screen and (max-width: 480px) {
+  .singlePackImg {
+    height: 180px;
+  }
+  .packDetails h1 {
+    font-size: 1.5rem;
+  }
+  .packDetails p {
+    font-size: 0.9rem;
+  }
+  .descriptionRight {
+    width: 250px;
+  }
+  .descriptionRight h2 {
+    font-size: 1.2rem;
+  }
+  .ticketHeading {
+    font-size: 1rem;
+  }
+  .bookNowBtnContainer {
+    margin-top: 10px;
+  }
+  .bookNowBtn {
+    width: 130px;
+    height: 32px;
+    font-size: 1rem;
+  }
+  .description h2,
+  .inclusion-exclusions-cont h2,
+  .tourPlan h2 {
+    font-size: 1.4rem;
+  }
+  .inclusion-exclusions {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+}
+@media screen and (max-width: 380px) {
 }

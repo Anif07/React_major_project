@@ -1,10 +1,16 @@
-import React from "react";
-import FlightsSearch from "../components/Flights/FlightsSearch";
+import React, { Suspense, lazy } from "react";
+import Loading from "../components/common/Loading";
+
+const FlightsSearch = lazy(() => import("../components/Flights/FlightsSearch"));
+const Footer = lazy(() => import("../components/Home/Footer"));
 
 function Flights() {
   return (
     <div>
-      <FlightsSearch />
+      <Suspense fallback={<Loading />}>
+        <FlightsSearch />
+        <Footer />
+      </Suspense>
     </div>
   );
 }

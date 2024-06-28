@@ -46,7 +46,7 @@ function HeroSection() {
         {db.images.map((obj, index) => (
           <div
             key={index}
-            className={slide === index ? "slide active" : "slide"}
+            className={slide === index ? "slide activeSlide" : "slide"}
           >
             <img src={obj.src} alt={obj.alt} className="heroSecImg" />
             {slide === index && (

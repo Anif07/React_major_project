@@ -106,3 +106,84 @@
   color: white;
   cursor: pointer;
 }
+
+@media screen and (max-width: 1200px) {
+  .packageBillingContainer {
+    padding: 2% 6%;
+    width: 92%;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .packageBillingContainer {
+    padding: 2% 3%;
+    width: 95%;
+  }
+}
+@media screen and (max-width: 996px) {
+  .packageBillingContainer {
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+  }
+}
+@media screen and (max-width: 768px) {
+  .checkout {
+    font-size: 1.8rem;
+  }
+  .billingPackName {
+    font-size: 1.4rem;
+  }
+  .billingImg {
+    width: 180px;
+    height: 140px;
+  }
+}
+@media screen and (max-width: 568px) {
+  .checkout {
+    font-size: 1.5rem;
+  }
+  .checkout span {
+    font-size: 1.5rem;
+  }
+  .package-left-top {
+    gap: 15px;
+  }
+  .package-left-bottom {
+    margin-top: 10px;
+  }
+  .packageBillingContainer {
+    width: 100%;
+  }
+  .billingImg {
+    width: 150px;
+    height: 100px;
+  }
+  .ticketHeading {
+    font-size: 1rem;
+  }
+  .billingPackName {
+    font-size: 1.3rem;
+  }
+  .completeMyOrder button {
+    width: 180px;
+    height: 40px;
+    font-size: 1rem;
+  }
+  .billingForm input[type="text"],
+  .billingForm input[type="email"] {
+    width: 75%;
+  }
+}
+@media screen and (max-width: 480px) {
+  .checkout {
+    font-size: 1.2rem;
+  }
+  .checkout span {
+    font-size: 1.2rem;
+  }
+  .billingPackName {
+    font-size: 1.1rem;
+  }
+}
+@media screen and (max-width: 380px) {
+}

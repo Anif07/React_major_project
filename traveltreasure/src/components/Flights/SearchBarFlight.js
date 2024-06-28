@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
   fetchFlights,
@@ -8,6 +8,7 @@ import {
   setTo,
 } from "../../redux/slices/Flights/FlightSearchSlice";
 import { useNavigate } from "react-router";
+import "../../styles/flight/searchBar.css";
 
 function SearchBarFlight() {
   const { from, to, date, persons } = useSelector(
@@ -24,40 +25,28 @@ function SearchBarFlight() {
     navigate("/SearchedFlights");
   };
 
+  useEffect(() => {
+    dispatch(setDate(today));
+  }, []);
+
+  const shiftValuesHandler = () => {
+    const tempFrom = from;
+    dispatch(setFrom(to));
+    dispatch(setTo(tempFrom));
+  };
+
   return (
     <div className="flightSearchContainer">
-      <form className="form" onSubmit={submitHandle}>
+      <form className="FlightSearchform" onSubmit={submitHandle}>
         <div>
           <label htmlFor="location">
             <i className="fa-solid fa-location-dot packSearchIcon"></i>
           </label>
-          {/* <select
-              id="airport"
-              name="airport"
-              onChange={(e) => dispatch(setFrom(e.target.value))}
-            >
-              <option value="">Select an airport...</option>
-              <option value="DEL">
-                Indira Gandhi International Airport (DEL)
-              </option>
-              <option value="BOM">
-                Chhatrapati Shivaji Maharaj International Airport (BOM)
-              </option>
-              <option value="BLR">
-                Kempegowda International Airport (BLR)
-              </option>
-              <option value="MAA">Chennai International Airport (MAA)</option>
-              <option value="HYD">
-                Rajiv Gandhi International Airport (HYD)
-              </option>
-              <option value="CCU">
-                Netaji Subhas Chandra Bose International Airport (CCU)
-              </option>
-            </select> */}
           <input
             list="origins"
             id="origin"
             name="from"
+            className="origin-input-field"
             value={from}
             placeholder="Where from?"
             onChange={(e) => dispatch(setFrom(e.target.value))}
@@ -72,29 +61,16 @@ function SearchBarFlight() {
             <option value="CCU">Kolkata</option>
           </datalist>
         </div>
+        <div className="shiftValues" onClick={shiftValuesHandler}>
+          <i classNA="fa-solid fa-arrow-right-arrow-left"></i>
+        </div>
         <div>
           <label htmlFor="location">
             <i className="fa-solid fa-location-dot flightSearchIcon"></i>
           </label>
-          {/* <select
-              id="airport"
-              name="airport"
-              onChange={(e) => dispatch(setTo(e.target.value))}
-            >
-              <option value="">Select an airport...</option>
-              <option value="BOM">
-                Chhatrapati Shivaji Maharaj International Airport (BOM)
-              </option>
-              <option value="DEL">
-                Indira Gandhi International Airport (DEL)
-              </option>
-              <option value="MAA">Chennai International Airport (MAA)</option>
-              <option value="BLR">
-                Kempegowda International Airport (BLR)
-              </option>
-            </select> */}
           <input
             list="destinations"
+            className="destination-input-field"
             id="destination"
             value={to}
             name="to"

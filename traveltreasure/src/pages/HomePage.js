@@ -4,6 +4,7 @@ import HeroSection from "../components/Home/HeroSection";
 import Services from "../components/Home/services";
 import Footer from "../components/Home/Footer";
 import AllPackagesInHome from "../components/Home/AllPackagesInHome";
+import TravellerPhotos from "../components/Home/travellerPhotos";
 
 function HomePage() {
   return (
@@ -11,7 +12,8 @@ function HomePage() {
       {/* <Navbar /> */}
       <HeroSection />
       <AllPackagesInHome />
-      {/* <Services /> */}
+      <Services />
+      <TravellerPhotos />
       <Footer />
     </div>
   );

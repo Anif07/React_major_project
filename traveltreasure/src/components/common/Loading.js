@@ -4,7 +4,7 @@ import "../../styles/Loading.css";
 function Loading() {
   return (
     <div className="LoadingContainer">
-      <div class="loading loading01">
+      <div className="loading loading01">
         <span>L</span>
         <span>O</span>
         <span>A</span>

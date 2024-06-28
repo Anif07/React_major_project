@@ -1,8 +1,11 @@
 .packages {
   display: flex;
-  justify-content: space-around;
   flex-wrap: wrap;
-  padding: 10px 5%;
+  justify-content: space-between;
+  /* padding: 10px 5%; */
+  width: 95%;
+  margin: auto;
+  gap: 20px;
 }
 .packageHeading {
   padding: 10px 5%;
@@ -20,6 +23,20 @@
   width: 100%;
   margin: auto;
   overflow: hidden;
+  position: relative;
+}
+.packImg-Container span {
+  width: 100%;
+}
+.favourites {
+  position: absolute;
+  right: 10px;
+  top: 5px;
+  cursor: pointer;
+  font-size: 20px;
+}
+.redFav {
+  color: red;
 }
 
 .packImg-Container img {
@@ -85,4 +102,132 @@
 }
 .icon {
   margin-left: 6px;
+}
+.readMoreBtnCont {
+  display: flex;
+  justify-content: end;
+  padding: 10px 8%;
+}
+.readMoreBtnCont button {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  color: #059212;
+  font-weight: 600;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+.readMoreBtnCont button:hover {
+  color: #f4651e;
+}
+
+@media screen and (max-width: 1200px) {
+  .Package {
+    width: 300px;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .packageHeading {
+    font-size: 60px;
+  }
+  .Package {
+    width: 290px;
+  }
+}
+@media screen and (max-width: 992px) {
+  .packageHeading {
+    font-size: 50px;
+  }
+  .Package {
+    width: 280px;
+  }
+  .package-name-cont h2 {
+    font-size: 1.2rem;
+  }
+  .package-name-cont p {
+    font-size: 0.9rem;
+  }
+  .price {
+    font-size: 1.1rem;
+  }
+  .packImg-Container img {
+    height: 180px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .packageHeading {
+    font-size: 45px;
+  }
+  .Package {
+    width: 250px;
+  }
+  .package-name-cont h2 {
+    font-size: 1.2rem;
+  }
+  .package-name-cont p {
+    font-size: 0.9rem;
+  }
+  .price {
+    font-size: 1rem;
+  }
+  .packImg-Container img {
+    height: 170px;
+  }
+  .exploreBtn {
+    width: 90px;
+    height: 25px;
+    font-size: 0.8rem;
+  }
+}
+@media screen and (max-width: 568px) {
+  .packageHeading {
+    font-size: 40px;
+  }
+  .Package {
+    width: 215px;
+  }
+  .packImg-Container img {
+    height: 160px;
+  }
+  .package-name-cont h2 {
+    font-size: 1.1rem;
+  }
+}
+@media screen and (max-width: 480px) {
+  .packageHeading {
+    font-size: 1.5rem;
+  }
+  .Package {
+    width: 180px;
+    padding: 5px;
+    border-radius: 5px;
+    gap: 10px;
+    margin: 0;
+  }
+  .package-name-cont h2 {
+    margin-bottom: 4px;
+    font-size: 1rem;
+  }
+  .package-name-cont p {
+    margin-bottom: 6px;
+    font-size: 0.7rem;
+  }
+  .price {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 600;
+  }
+  .packImg-Container img {
+    height: 150px;
+  }
+  .exploreBtn {
+    width: 80px;
+    height: 22px;
+    font-size: 0.7rem;
+  }
+}
+@media screen and (max-width: 380px) {
+  .packages {
+    justify-content: center;
+  }
 }

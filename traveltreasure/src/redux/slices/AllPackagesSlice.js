@@ -31,6 +31,10 @@ const AllPackages = createSlice({
     internationalStatue: "idle",
     id: 0,
     internationalId: 0,
+    searchStatus: "idle",
+    destination: "",
+    uptoIndia: 8,
+    uptoInternational: 8,
   },
   reducers: {
     setId: (state, action) => {
@@ -38,6 +42,24 @@ const AllPackages = createSlice({
     },
     setInternationalId: (state, action) => {
       state.internationalId = action.payload;
+    },
+    setDestination: (state, action) => {
+      state.destination = action.payload;
+    },
+    setSearchStatus: (state) => {
+      state.searchStatus = "searched";
+    },
+    setuptoIndia: (state) => {
+      state.uptoIndia += 8;
+    },
+    setuptoIndiatoInitial: (state) => {
+      state.uptoIndia -= 8;
+    },
+    setuptoInternational: (state) => {
+      state.uptoInternational += 5;
+    },
+    setuptoInternationalInital: (state) => {
+      state.uptoInternational -= 5;
     },
   },
   extraReducers: (builder) => {
@@ -65,5 +87,14 @@ const AllPackages = createSlice({
   },
 });
 
-export const { setId, setInternationalId } = AllPackages.actions;
+export const {
+  setId,
+  setInternationalId,
+  setDestination,
+  setSearchStatus,
+  setuptoIndia,
+  setuptoInternational,
+  setuptoIndiatoInitial,
+  setuptoInternationalInital,
+} = AllPackages.actions;
 export default AllPackages.reducer;

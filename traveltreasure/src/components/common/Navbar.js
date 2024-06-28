@@ -1,8 +1,22 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
+import { Link, NavLink } from "react-router-dom";
 import "../../styles/homePage/navbar.css";
 
 function Navbar() {
+  const [isOpen, setISOpen] = useState(false);
+
+  const handleHamburger = () => {
+    const linksContainer = document.querySelector(".linksContainer");
+    // linksContainer.style.display = "block";
+    linksContainer.classList.toggle("linksContaineractive");
+  };
+
+  const handleAccountMouseEnter = () => {
+    setISOpen(true);
+  };
+  const handleAccountMouseLeave = () => {
+    setISOpen(false);
+  };
   return (
     <header className="header">
       <nav className="NavBar">
@@ -15,47 +29,92 @@ function Navbar() {
           </Link>
           <ul className="linksContainer">
             <li>
-              <Link to="/home">
+              <NavLink
+                className={({ isActive }) =>
+                  isActive ? "active link" : "link"
+                }
+                // activeClassName="active"
+                // className="navLink link"
+                to="/home"
+              >
                 <i className="fa-solid fa-house navLinkIcon"></i>Home
-              </Link>
+              </NavLink>
             </li>
             <li>
-              <Link to="/packages">
+              <NavLink
+                to="/packages"
+                className={({ isActive }) =>
+                  isActive ? "active link" : "link"
+                }
+              >
                 <i className="fa-solid fa-person-walking-luggage navLinkIcon"></i>
                 Packages
-              </Link>
+              </NavLink>
             </li>
             <li>
-              <Link to="/Flights">
+              <NavLink
+                to="/Flights"
+                className={({ isActive }) =>
+                  isActive ? "active link" : "link"
+                }
+              >
                 <i className="fa-solid fa-plane-departure navLinkIcon"></i>
                 Flights
-              </Link>
+              </NavLink>
             </li>
             <li>
-              <Link>
+              <NavLink
+                to="/Hotels"
+                className={({ isActive }) =>
+                  isActive ? "active link" : "link"
+                }
+              >
                 <i className="fa-solid fa-hotel navLinkIcon"></i>Hotels
-              </Link>
+              </NavLink>
             </li>
-            <li>
+            {/* <li>
               <Link>
                 <i className="fa-solid fa-pencil navLinkIcon"></i>Blog
               </Link>
-            </li>
+            </li> */}
             <li>
-              <Link to="/myTrips">
-                <i class="fa-solid fa-suitcase navLinkIcon"></i>My Trips
-              </Link>
+              <NavLink
+                to="/myTrips/myPackages"
+                className={({ isActive }) =>
+                  isActive ? "active link" : "link"
+                }
+              >
+                <i className="fa-solid fa-suitcase navLinkIcon"></i>My Trips
+              </NavLink>
+            </li>
+            <li className="Acctoun-cont">
+              <div
+                className="Account"
+                onMouseEnter={handleAccountMouseEnter}
+                onMouseLeave={handleAccountMouseLeave}
+              >
+                Account <i className="fa-solid fa-caret-down"></i>
+              </div>
+              {isOpen && (
+                <ul
+                  className="accoun-dropdown"
+                  onMouseEnter={handleAccountMouseEnter}
+                  onMouseLeave={handleAccountMouseLeave}
+                >
+                  {/* <li>
+                    <Link>Favorites</Link>
+                  </li> */}
+                  <li>
+                    <Link to="/Login">Login</Link>
+                  </li>
+                  <li>
+                    <Link to="/Signup">Signup</Link>
+                  </li>
+                </ul>
+              )}
             </li>
           </ul>
-          <div className="logOut">
-            <button>
-              <span className="logOutIcon">
-                <i className="fa-solid fa-right-from-bracket"></i>
-              </span>
-              <span className="logOutText">Logout</span>
-            </button>
-          </div>
-          <div className="bars">
+          <div className="bars" onClick={handleHamburger}>
             <button>
               <i className="fa-solid fa-bars"></i>
             </button>
